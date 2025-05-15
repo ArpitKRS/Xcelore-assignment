@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "cefb7a3d-c7be-4b98-85f9-ae7e26f56aa0",
+		"name": "Doctor Patient API",
+		"description": "Collection for testing Doctor Patient Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Doctors",
+			"item": [
+				{
+					"name": "Create Doctor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dr. John Smith\",\n    \"city\": \"Delhi\",\n    \"email\": \"john.smith@example.com\",\n    \"phoneNumber\": \"9876543215\",\n    \"speciality\": \"Orthopaedic\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/doctors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"doctors"
+							]
+						},
+						"description": "Creates a new doctor"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Doctors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/doctors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"doctors"
+							]
+						},
+						"description": "Retrieves all doctors"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Doctor By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/doctors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"doctors",
+								"1"
+							]
+						},
+						"description": "Retrieves a doctor by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Doctor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/doctors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"doctors",
+								"1"
+							]
+						},
+						"description": "Deletes a doctor by ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for doctor management"
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "Create Patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Jane Doe\",\n    \"city\": \"Delhi\",\n    \"email\": \"jane.doe@example.com\",\n    \"phoneNumber\": \"8765432105\",\n    \"symptom\": \"Back Pain\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"patients"
+							]
+						},
+						"description": "Creates a new patient"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"patients"
+							]
+						},
+						"description": "Retrieves all patients"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Patient By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/patients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"patients",
+								"1"
+							]
+						},
+						"description": "Retrieves a patient by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Patient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/patients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"patients",
+								"1"
+							]
+						},
+						"description": "Deletes a patient by ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for patient management"
+		},
+		{
+			"name": "Suggestions",
+			"item": [
+				{
+					"name": "Suggest Doctors for Patient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/suggestions/patient/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"suggestions",
+								"patient",
+								"1"
+							]
+						},
+						"description": "Suggests doctors for a patient based on symptom and location"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for doctor suggestions"
+		}
+	]
+}
